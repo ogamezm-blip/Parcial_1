@@ -30,3 +30,11 @@ while True:
         break
     print("Error: Categoría no válida. Debe ser una de las opciones listadas.")
 
+# Solicitar y validar Prioridad
+prioridades_validas = ["Low", "Medium", "High", "Critical"]
+while True:
+    prioridad = input(f"Ingrese la prioridad {prioridades_validas}: ").capitalize()
+    if prioridad in prioridades_validas:
+        break
+    print("Error: Prioridad no válida. Debe ser una de las opciones listadas.")
+
