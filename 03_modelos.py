@@ -67,4 +67,30 @@ if __name__ == "__main__":
     # Almacenarlos en una lista de objetos
     lista_tickets = [ticket1, ticket2, ticket3]
 
-   
+    print("\n--- TICKETS CREADOS INICIALMENTE ---")
+    for t in lista_tickets:
+        print(t)
+        print("-" * 40)
+
+    print("\n--- EJECUTANDO PRUEBAS MÍNIMAS ---")
+    
+    # Prueba A: Asignar un técnico correctamente
+    print("\nIntentando asignar técnico:")
+    ticket1.asignar_tecnico(usuario_tecnico)
+    
+    # Prueba B: Cambiar un ticket a 'In Progress'
+    print("\nIntentando cambiar de estado:")
+    ticket1.cambiar_estado("In Progress")
+    
+    # Prueba C: Controlar un intento de estado no permitido
+    print("\nIntentando poner un estado inválido (ej. 'Finalizado'):")
+    ticket2.cambiar_estado("Finalizado")
+
+    # (Extra) Probar asignación de técnico inválida
+    print("\nIntentando asignar a un estudiante como técnico:")
+    ticket3.asignar_tecnico(usuario_estudiante)
+
+    print("\n--- RESUMEN DESPUÉS DE LAS PRUEBAS ---")
+    print(ticket1)
+    print("-" * 40)
+    print(ticket2)
