@@ -49,4 +49,22 @@ class Ticket:
                 f"  -> Solicitante: {self.solicitante.nombre}\n"
                 f"  -> Técnico: {nombre_tecnico}")
 
+# BLOQUE DE EJECUCIÓN
+if __name__ == "__main__":
+    print("="*40)
+    print("   SISTEMA DE MODELOS ORIENTADO A OBJETOS")
+    print("="*40)
 
+    # Crear dos usuarios
+    usuario_estudiante = Usuario(1, "Carlos Gomez", "carlos@edu.com", "student")
+    usuario_tecnico = Usuario(2, "Laura Mendez", "laura@edu.com", "technician")
+
+    # Crear tres tickets
+    ticket1 = Ticket(101, "Fallo en el portal web", "Software", "High", usuario_estudiante)
+    ticket2 = Ticket(102, "Mantenimiento de servidor", "Hardware", "Medium", usuario_estudiante)
+    ticket3 = Ticket(103, "Renovar licencia de Office", "Software", "Low", usuario_estudiante)
+
+    # Almacenarlos en una lista de objetos
+    lista_tickets = [ticket1, ticket2, ticket3]
+
+   
