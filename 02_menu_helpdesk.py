@@ -66,3 +66,29 @@ def mostrar_resumen(tickets):
     # Uso de len() para el total
     print(f"Total de tickets en memoria: {len(tickets)}")
 
+def ejecutar_menu():
+    # Lista que mantendrá los tickets durante la ejecución
+    tickets = [] 
+    
+    # Uso del bucle while para mantener el menú activo
+    while True:
+        opcion = pedir_opcion()
+        
+        # Estructura if/elif/else para controlar el flujo del menú
+        if opcion == '1':
+            registrar_ticket(tickets)
+        elif opcion == '2':
+            listar_tickets(tickets)
+        elif opcion == '3':
+            buscar_por_solicitante(tickets)
+        elif opcion == '4':
+            mostrar_resumen(tickets)
+        elif opcion == '5':
+            print("Saliendo del sistema Helpdesk. ¡Hasta pronto!")
+            break
+        else:
+            print("Opción inválida. Por favor, intente de nuevo.")
+
+# Condición para iniciar el menú
+if __name__ == "__main__":
+    ejecutar_menu()
