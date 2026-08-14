@@ -22,3 +22,47 @@ def registrar_ticket(tickets):
     })
     print("Ticket registrado exitosamente.")
 
+def listar_tickets(tickets):
+    # Uso de len() para verificar si hay tickets
+    if len(tickets) == 0:
+        print("No hay tickets registrados en memoria.")
+    else:
+        print("\n--- Lista de Tickets ---")
+        for i in range(len(tickets)):
+            t = tickets[i]
+            print(f"[{i+1}] Solicitante: {t['solicitante']} | Prioridad: {t['prioridad']} | Asunto: {t['asunto']}")
+
+def buscar_por_solicitante(tickets):
+    busqueda = input("Ingrese el nombre del solicitante a buscar: ")
+    encontrados = 0
+    
+    print(f"\n--- Resultados para '{busqueda}' ---")
+    for t in tickets:
+        # Comparación sin distinguir mayúsculas/minúsculas usando .lower()
+        if t["solicitante"].lower() == busqueda.lower():
+            print(f"-> Prioridad: {t['prioridad']} | Asunto: {t['asunto']}")
+            encontrados += 1
+            
+    if encontrados == 0:
+        print("No se encontraron tickets para ese solicitante.")
+
+def mostrar_resumen(tickets):
+    # Contadores para el resumen
+    alta, media, baja = 0, 0, 0
+    
+    for t in tickets:
+        prioridad = t["prioridad"].lower()
+        if prioridad == "alta":
+            alta += 1
+        elif prioridad == "media":
+            media += 1
+        elif prioridad == "baja":
+            baja += 1
+            
+    print("\n--- Resumen por Prioridad ---")
+    print(f"Alta:  {alta}")
+    print(f"Media: {media}")
+    print(f"Baja:  {baja}")
+    # Uso de len() para el total
+    print(f"Total de tickets en memoria: {len(tickets)}")
+
