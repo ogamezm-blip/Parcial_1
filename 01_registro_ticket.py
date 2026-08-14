@@ -49,3 +49,14 @@ ticket = {
     "status": "Open"
 }
 
+# Mostrar el resumen utilizando f-strings
+print("\n" + "="*35)
+print("       RESUMEN DEL TICKET GUARDADO")
+print("="*35)
+print(f"Ticket #{ticket['numero']} | Estado: {ticket['status']}")
+print(f"Solicitante : {ticket['solicitante']}")
+print(f"Título      : {ticket['titulo']}")
+print(f"Descripción : {ticket['descripcion']}")
+print(f"Categoría   : {ticket['categoria']}")
+print(f"Prioridad   : {ticket['prioridad']}")
+print("="*35)
