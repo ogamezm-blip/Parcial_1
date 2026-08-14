@@ -17,3 +17,16 @@ def pedir_campo_obligatorio(mensaje):
             return valor
         print("Error: Este campo es obligatorio y no puede estar vacío.")
 
+
+solicitante = pedir_campo_obligatorio("Ingrese el nombre del solicitante: ")
+titulo = pedir_campo_obligatorio("Ingrese el título del ticket: ")
+descripcion = pedir_campo_obligatorio("Ingrese la descripción del problema: ")
+
+# Solicitar y validar Categoría
+categorias_validas = ["General", "Hardware", "Software", "Network"]
+while True:
+    categoria = input(f"Ingrese la categoría {categorias_validas}: ").capitalize()
+    if categoria in categorias_validas:
+        break
+    print("Error: Categoría no válida. Debe ser una de las opciones listadas.")
+
