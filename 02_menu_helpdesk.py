@@ -9,3 +9,16 @@ def pedir_opcion():
     print("5. Salir")
     return input("Seleccione una opción (1-5): ")
 
+def registrar_ticket(tickets):
+    solicitante = input("Ingrese el nombre del solicitante: ")
+    asunto = input("Ingrese el asunto o problema: ")
+    prioridad = input("Ingrese la prioridad (Alta/Media/Baja): ")
+    
+    # Se agrega el registro a la lista de diccionarios usando append()
+    tickets.append({
+        "solicitante": solicitante,
+        "asunto": asunto,
+        "prioridad": prioridad
+    })
+    print("Ticket registrado exitosamente.")
+
