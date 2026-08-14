@@ -38,3 +38,14 @@ while True:
         break
     print("Error: Prioridad no válida. Debe ser una de las opciones listadas.")
 
+# Guardar el registro en un diccionario con status inicial
+ticket = {
+    "numero": numero_ticket,
+    "solicitante": solicitante,
+    "titulo": titulo,
+    "descripcion": descripcion,
+    "categoria": categoria,
+    "prioridad": prioridad,
+    "status": "Open"
+}
+
